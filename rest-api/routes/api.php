@@ -19,12 +19,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('polewczak/310706/people', [PeopleController::class, 'index']);
+Route::post('polewczak/310706/people', [PeopleController::class, 'create']);
 
-Route::get('polewczak/310706/people/{people}', [PeopleController::class, 'show']);
-
-Route::post('polewczak/310706/people', [PeopleController::class, 'store']);
+Route::get('polewczak/310706/people/{people}', [PeopleController::class, 'read']);
 
 Route::put('polewczak/310706/people/{people}', [PeopleController::class, 'update']);
 
-Route::delete('polewczak/310706/people/{people}', [PeopleController::class, 'destroy']);
+Route::delete('polewczak/310706/people/{people}', [PeopleController::class, 'delete']);
+
+Route::get('polewczak/310706/people', [PeopleController::class, 'readall']);
